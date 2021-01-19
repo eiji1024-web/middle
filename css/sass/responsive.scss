@@ -1,0 +1,1176 @@
+$sp: 375px;
+$tb: 768px;
+$lptp: 1024px;
+$pclg: 1367px;
+
+@mixin sp {
+    @media (max-width: ($sp)) {
+    @content;
+    }
+}
+
+@mixin tb {
+    @media (max-width: ($tb)) {
+        @content;
+    }
+}
+
+@mixin lptp {
+    @media (max-width: ($lptp)) {
+        @content;
+    }
+}
+
+@mixin pclg {
+    @media (min-width: ($pclg)) {
+        @content;
+    }
+}
+
+header {
+    @include lptp {
+        height: 80px;
+        top: 40px;
+    }
+    @include sp {
+        max-width: 375px;
+        left: 49%;
+    }
+    .header-in {
+        @include lptp {
+            height: 80px;
+            justify-content: space-between;
+        }
+        .logo-wrap {
+            @include lptp {
+                width: 210px;
+            }
+            @include sp {
+                margin-left: 10px;
+                width: 160px;
+            }
+            .header-logo {
+                @include lptp {
+                    width: 40px;
+                    height: 40px;
+                }
+                @include sp {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+            a {
+                @include lptp {
+                    margin-left: 5%;
+                    width: 160px;
+                }
+                @include sp {
+                    width: 120px;
+                }
+                .heading {
+                    @include lptp {
+                        margin-left: 0;
+                        font-size: 20px;
+                        width: 160px;
+                    }
+                    @include sp {
+                        width: 120px;
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+        .header-nav {
+            @include lptp {
+                width: 26vw;
+                justify-content: space-between;
+                margin-left: 0;
+            }
+            @include tb {
+                display: none;
+            }
+            &-item02,&-item03 {
+                @include lptp {
+                    margin-left: 0;
+                }
+            }
+        }
+        .hamburger {
+            @include tb {
+                display: block;
+                right: 40px;
+            }
+            @include sp {
+                font-size: 20px;
+                right: 20px;
+            }
+        }
+        .contact-nav {
+            @include lptp {
+                margin-left: 0;
+            }
+            @include tb {
+                display: none;
+            }
+        }
+    }
+    .hamburger-menu {
+        .hamburger-wrapper {
+            @include sp {
+                height: 120px;
+            }
+            &-item01,&-item02,&-item03 {
+                @include sp {
+                    padding: 10px;
+                }
+            }
+            &-item02 {
+                margin: 0 30px;
+            }
+        }
+    }
+}
+.mv {
+    &-in {
+        @include lptp {
+            width: 100vw;
+            height: 620px + 80px;
+            padding-top: 80px + 80px;
+        }
+        @include tb {
+            flex-direction: column;
+        }
+        .bgCircle {
+            @include lptp {
+                width: 50vw;
+                left: 50vw;
+                top: -80px;
+            }
+            @include tb {
+                left: 30vw;
+                width: 70vw;
+                top: 0;
+            }
+        }
+        .mv-contents {
+            @include lptp {
+                margin-left: 9vw;
+                width: 40vw;
+            }
+            @include tb {
+                width: 100%;
+                margin-left: 3vw;
+                text-align: center;
+            }
+            .section-ttl {
+                @include lptp {
+                    width: 100%;
+                    font-size: 1.6em;
+                }
+                @include tb {
+                    width: 94%;
+                    height: 100px;
+                    font-size: 1.5em;
+                }
+                .br-tb01,.br-tb02 {
+                    @include tb {
+                        display: none;
+                    }
+                }
+            }
+            .section-txt {
+                @include lptp {
+                    margin-top: 4vh;
+                    font-size: 0.8em;
+                }
+                @include tb {
+                    width: 94%;
+                    height: 70px;
+                    margin-top: 0;
+                    font-size: 16px;
+                }
+                @include sp {
+                    margin-top: 24px;
+                }
+                .br-tb03,.br-pc02 {
+                    @include tb {
+                        display: none;
+                    }
+                }
+                .br-pc01 {
+                    @include sp {
+                        display: none;
+                    }
+                }
+            }
+            .contact-nav {
+                @include lptp {
+                    margin-top: 4vh;
+                }
+                @include tb {
+                    margin-top: 2vh;
+                    height: auto;
+                    width: 94%;
+                }
+                @include sp {
+                    margin-top: 6vh;
+                }
+            }
+        }
+        .mv-img {
+            @include lptp {
+                align-self: center;
+                margin-left: 2vw;
+                width: 40vw;
+                min-width: 400px;
+                height: 330px;
+            }
+            @include tb {
+                min-width: 330px;
+                height: auto;
+            }
+            @include sp {
+                margin-top: 6vh;
+            }
+            .manager {
+                @include lptp {
+                    min-width: 400px;
+                    height: 330px;
+                }
+                @include tb {
+                    min-width: 330px;
+                    height: auto
+                }
+            }
+        }
+    }
+}
+.feature {
+    &-in {
+        @include lptp {
+            padding-top: 51px;
+            padding-bottom: 101px;
+            height: auto;
+        }
+        @include tb {
+            padding-top: 36px;
+            padding-bottom: 40px;
+        }
+        .section-ttl {
+            @include lptp {
+                font-size: 26px;
+            }
+            @include tb {
+                font-size: 22px;
+            }
+            @include sp {
+                width: 100%;
+            }
+        }
+        .eng-ttl {
+            @include lptp {
+                font-size: 14px;
+            }
+            @include tb {
+                font-size: 13px;
+            }
+        }
+        .feature-contents {
+            &-01 {
+                &-ttl {
+                    @include lptp {
+                        font-size: 24px;
+                        margin-top: 41px;
+                    }
+                    @include tb {
+                        font-size: 20px;
+                        margin-top: 34px;
+                    }
+                }
+                .feature-item {
+                    @include lptp {
+                        margin-top: 40px;
+                        align-items: center;
+                        justify-content: space-around;
+                        padding-left: 30px;
+                    }
+                    @include tb {
+                        flex-direction: column-reverse;
+                        justify-content: center;
+                        margin-top: 28px;
+                        padding: 0;
+                    }
+                    &-img {
+                        @include lptp {
+                            width: 300px;
+                            height: auto;
+                            margin-left: 0;
+                        }
+                        @include tb {
+                            order: 1;
+                            width: 200px;
+                            margin-top: 30px;
+                        }
+                    }
+                    .feature-explanation {
+                        @include lptp {
+                            margin-left: 0;
+                            width: 46vw;
+                            margin-top: 30px;
+                        }
+                        @include tb {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            width: 96%;
+                            margin-top: 10px;
+                        }
+                        @include sp {
+                            flex-direction: column;
+                        }
+                        .explanation-ttl {
+                            @include lptp {
+                                height: auto;
+                                line-height: 1.8;
+                            }
+                            @include tb {
+                                align-self: center;
+                                text-align: center;
+                                width: 100%;
+                                font-size: 18px;
+                            }
+                            @include sp {
+                                align-self: flex-start;
+                                width: 100%;
+                                font-size: 16px;
+                            }
+                            .br-lptp01 {
+                                @include lptp {
+                                    display: block;
+                                }
+                                @include tb {
+                                    display: none;
+                                }
+                            }
+                            .br-tb04 {
+                                @include tb {
+                                    display: none;
+                                }
+                                @include sp {
+                                    display: block;
+                                }
+                            }
+                            br {
+                                @include tb {
+                                    display: none;
+                                }
+                            }
+                        }
+                        .explanation-txt {
+                            @include lptp {
+                                margin-top: 24px;
+                                width: 100%;
+                            }
+                            @include tb {
+                                width: 100%;
+                                margin-top: 0;
+                                font-size: 13px;
+                                height: auto;
+                                margin-top: 30px;
+                            }
+                            @include sp {
+                                width: 100%;
+                                height: auto;
+                                font-size: 13px;
+                                line-height: 1.8;
+                                margin-top: 40px;
+                                margin-left: 0;
+                            }
+                            .br-pc03,.br-pc04,.br-pc05 {
+                                @include tb {
+                                    display: none;
+                                }
+                            }
+                            br {
+                                @include tb {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &-02 {
+                &-ttl {
+                    @include lptp {
+                        font-size: 24px;
+                        margin-top: 100px;
+                    }
+                    @include tb {
+                        font-size: 20px;
+                        margin-top: 60px;
+                    }
+                }
+                .feature-item {
+                    @include lptp {
+                        margin-top: 40px;
+                        align-items: center;
+                        justify-content: space-around;
+                    }
+                    @include tb {
+                        flex-direction: column-reverse;
+                    }
+                    .feature-explanation {
+                        @include lptp {
+                            margin-left: 0;
+                            width: 46vw;
+                            margin-top: 0;
+                        }
+                        @include tb {
+                            display: flex;
+                            flex-direction: column;
+                            width: 96vw;
+                        }
+                        @include sp {
+                            flex-direction: column;
+                        }
+                        .explanation-ttl {
+                            @include lptp {
+                                height: auto;
+                                line-height: 1.8;
+                            }
+                            @include tb {
+                                width: 100%;
+                                font-size: 18px;
+                                margin-top: 30px;
+                                align-self: center;
+                                text-align: center;
+                            }
+                            @include sp {
+                                align-self: flex-start;
+                                width: 100%;
+                                font-size: 16px;
+                            }
+                            .br-pc06,.br-pc07 {
+                                @include tb {
+                                    display: none;
+                                }
+                            }
+                        }
+                        .explanation-txt {
+                            @include tb {
+                                font-size: 13px;
+                                width: 100%;
+                                margin-top: 30px;
+                            }
+                            @include sp {
+                                font-size: 12px;
+                                line-height: 1.8;
+                                margin-left: 0;
+                                margin-top: 40px;
+                            }
+                            .br-pc08,.br-pc09 {
+                                @include tb {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                    &-img {
+                        @include lptp {
+                            width: 300px;
+                            height: auto;
+                            margin-left: 0;
+                        }
+                        @include tb {
+                            width: 260px;
+                            margin-top: 20px;
+                            align-self: center;
+                        }
+                    }
+                }
+            }
+            &-03 {
+                &-ttl {
+                    @include lptp {
+                        font-size: 24px;
+                        margin-top: 100px;
+                    }
+                    @include tb {
+                        font-size: 20px;
+                        margin-top: 60px;
+                    }
+                }
+                .feature-item {
+                    @include lptp {
+                        padding-left: 30px;
+                        margin-top: 40px;
+                        align-items: center;
+                        justify-content: space-around;
+                    }
+                    @include tb {
+                        flex-direction: column-reverse;
+                        justify-content: center;
+                        margin-top: 28px;
+                        padding: 0;
+                    }
+                    &-img {
+                        @include lptp {
+                            width: 300px;
+                            height: auto;
+                            margin-left: 0;
+                        }
+                        @include tb {
+                            order: 1;
+                            width: 200px;
+                            margin-top: 20px;
+                            align-self: center;
+                        }
+                    }
+                    .feature-explanation {
+                        @include lptp {
+                            margin-left: 0;
+                            width: 46vw;
+                            margin-top: 30px;
+                        }
+                        @include tb {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            width: 96%;
+                            margin-top: 10px;
+                        }
+                        @include sp {
+                            flex-direction: column;
+                            align-items: flex-start;
+                        }
+                        .explanation-ttl {
+                            @include lptp {
+                                height: auto;
+                                line-height: 1.8;
+                            }
+                            @include tb {
+                                align-self: center;
+                                text-align: center;
+                                width: 100%;
+                                font-size: 18px;
+                            }
+                            @include sp {
+                                font-size: 16px;
+                                width: 100%;
+                            }
+                            .br-pc11,.br-pc12 {
+                                @include tb {
+                                    display: none;
+                                }
+                            }
+                            br {
+                                @include tb {
+                                    display: none;
+                                }
+                            }
+                        }
+                        .explanation-txt {
+                            @include lptp {
+                                margin-top: 24px;
+                                width: 100%;
+                            }
+                            @include tb {
+                                width: 100%;
+                                height: auto;
+                                margin-top: 30px;
+                                margin-left: 0;
+                                font-size: 13px;
+                            }
+                            @include sp {
+                                line-height: 1.8;
+                                width: 100%;
+                                height: auto;
+                                margin-left: 0;
+                                margin-top: 40px;
+                            }
+                            .br-pc13,.br-pc14,.br-pc15 {
+                                @include tb {
+                                    display: none;
+                                }
+                            }
+                            br {
+                                @include tb {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.price {
+    &-in {
+        @include lptp {
+            padding-top: 51px;
+            padding-bottom: 81px;
+            height: auto;
+        }
+        @include tb {
+            padding-top: 36px;
+            padding-bottom: 50px;
+        }
+        @include sp {
+            padding-top: 26px;
+            padding-bottom: 40px;
+        }
+        .section-ttl {
+            @include lptp {
+                font-size: 26px;
+            }
+            @include tb {
+                font-size: 22px;
+                text-align: center;
+            }
+        }
+        .eng-ttl {
+            @include lptp {
+                font-size: 14px;
+            }
+            @include tb {
+                text-align: center;
+                font-size: 13px;
+            }
+        }
+        table {
+            @include lptp {
+                width: 80%;
+                height: 340px;
+            }
+            @include tb {
+                width: 90%;
+                margin-top: 50px;
+            }
+            @include sp {
+                margin-top: 30px;
+            }
+            tr {
+                .td-ttl {
+                    @include lptp {
+                        line-height: 1.3;
+                    }
+                    @include tb {
+                        width: 35%;
+                        font-size: 13px;
+                    }
+                    .br-lptp02 {
+                        @include lptp {
+                            display: block;
+                        }
+                    }
+                }
+                .td-price {
+                    @include tb {
+                        width: 65%;
+                    }
+                }
+            }
+        }
+        .comment {
+            @include lptp {
+                font-size: 14px;
+                text-align: center;
+            }
+        }
+    }
+}
+.faq {
+    &-in {
+        @include lptp {
+            padding-top: 51px;
+            padding-bottom: 61px;
+            height: auto;
+        }
+        @include tb {
+            padding-top: 36px;
+            padding-bottom: 50px;
+        }
+        @include sp {
+            padding-top: 26px;
+            padding-bottom: 34px;
+        }
+        .section-ttl {
+            @include lptp {
+                font-size: 26px;
+            }
+            @include tb {
+                font-size: 22px;
+                text-align: center;
+            }
+        }
+        .eng-ttl {
+            @include lptp {
+                font-size: 14px;
+            }
+            @include tb {
+                font-size: 13px;
+            }
+        }
+        .faq-contents {
+            @include lptp {
+                margin-top: 60px;
+                width: 80%;
+            }
+            @include tb {
+                margin-top: 40px;
+                width: 90%;
+            }
+            @include sp {
+                margin-top: 24px;
+            }
+            &-item01 {
+                .question {
+                    @include sp {
+                        font-size: 13px;
+                    }
+                }
+                .answer {
+                    @include lptp {
+                        height: auto;
+                        padding-bottom: 10px;
+                    }
+                    @include sp {
+                        padding-left: 10px;
+                        padding-right: 10px;
+                    }
+                }
+            }
+            &-item02 {
+                .question {
+                    @include sp {
+                        font-size: 13px;
+                        line-height: 1.8;
+                        padding-top: 6px;
+                    }
+                    .br-sp01 {
+                        @include sp {
+                            display: block;
+                        }
+                    }
+                }
+                .answer {
+                    @include lptp {
+                        height: auto;
+                        padding-bottom: 10px;
+                    }
+                    @include sp {
+                        padding-left: 10px;
+                        padding-right: 10px;
+                    }
+                }
+            }
+            &-item03 {
+                .answer {
+                    @include lptp {
+                        height: auto;
+                        padding-bottom: 10px;
+                    }
+                    @include sp {
+                        padding-left: 10px;
+                        padding-right: 10px;
+                    }
+                    .br-pc17 {
+                        @include lptp {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.blog {
+    &-in {
+        @include lptp {
+            padding-top: 51px;
+            padding-bottom: 61px;
+            height: auto;
+        }
+        @include tb {
+            padding-top: 36px;
+            padding-bottom: 50px;
+        }
+        @include sp {
+            padding-top: 26px;
+            padding-bottom: 34px;
+        }
+        .section-ttl {
+            @include lptp {
+                font-size: 26px;
+            }
+            @include tb {
+                font-size: 22px;
+                text-align: center;
+            }
+        }
+        .eng-ttl {
+            @include lptp {
+                font-size: 14px;
+            }
+            @include tb {
+                font-size: 13px;
+                text-align: center;
+            }
+        }
+        .blog-contents {
+            @include lptp {
+                margin: 0 auto;
+                margin-top: 60px;
+                width: 90%;
+                flex-direction: column;
+            }
+            @include tb {
+                width: 358px;
+                height: auto;
+                margin-top: 30px;
+            }
+            &-item01 {
+                @include lptp {
+                    display: flex;
+                    max-width: 100%;
+                    height: 240px;
+                }
+                @include tb  {
+                    flex-direction: column;
+                    height: 360px;
+                    max-width: 358px;
+                }
+                .blog-image {
+                    @include lptp {
+                        max-width: 358px;
+                        height: 240px;
+                    }
+                    @include tb {
+                        width: 358px;
+                        margin: 0 auto;
+                    }
+                }
+                .blog-ttl {
+                    @include lptp {
+                        font-size: 20px;
+                        max-width: 400px;
+                        margin-top: 80px;
+                    }
+                    @include tb {
+                        width: 90%;
+                        height: auto;
+                        margin-top: 20px;
+                    }
+                }
+                .date {
+                    @include lptp {
+                        bottom: 40px;
+                    }
+                    @include tb {
+                        bottom: 15px;
+                    }
+                }
+            }
+            &-item02 {
+                @include lptp {
+                    margin: 30px 0;
+                    display: flex;
+                    max-width: 100%;
+                    height: 240px;
+                }
+                @include tb  {
+                    flex-direction: column;
+                    height: 380px;
+                    max-width: 358px;
+                }
+                .blog-image {
+                    @include lptp {
+                        max-width: 358px;
+                        height: 240px;
+                    }
+                    @include tb {
+                        width: 358px;
+                        margin: 0 auto;
+                    }
+                }
+                .blog-ttl {
+                    @include lptp {
+                        font-size: clamp(18px, 1.6vw, 24px);
+                        max-width: 100%;
+                        margin-top: 40px;
+                        height: 120px;
+                    }
+                    @include tb {
+                        width: 90%;
+                        height: auto;
+                        margin-top: 20px;
+                    }
+                    .br-pc18,.br-pc19 {
+                        @include lptp {
+                            display: none;
+                        }
+                    }
+                }
+                .date {
+                    @include lptp {
+                        bottom: 40px;
+                    }
+                    @include tb {
+                        bottom: 15px;
+                    }
+                }
+            }
+            &-item03 {
+                @include lptp {
+                    display: flex;
+                    max-width: 100%;
+                    height: 240px;
+                }
+                @include tb  {
+                    flex-direction: column;
+                    height: 360px;
+                    max-width: 358px;
+                }
+                .blog-image {
+                    @include lptp {
+                        max-width: 358px;
+                        height: 200px;
+                    }
+                    @include tb {
+                        width: 358px;
+                        margin: 0 auto;
+                    }
+                }
+                .blog-ttl {
+                    @include lptp {
+                        font-size: 20px;
+                        max-width: 400px;
+                        margin-top: 80px;
+                        font-size: clamp(17px, 1.8vw, 24px);
+                    }
+                    @include tb {
+                        width: 90%;
+                        height: auto;
+                        margin-top: 60px;
+                    }
+                }
+                .date {
+                    @include lptp {
+                        bottom: 40px;
+                    }
+                    @include tb {
+                        bottom: 15px;
+                    }
+                }
+            }
+        }
+    }
+}
+.works {
+    &-in {
+        @include lptp {
+            padding-top: 51px;
+            padding-bottom: 61px;
+            height: auto;
+        }
+        @include tb {
+            padding-top: 36px;
+            padding-bottom: 50px;
+        }
+        .section-ttl {
+            @include lptp {
+                font-size: 26px;
+            }
+            @include tb {
+                font-size: 22px;
+                text-align: center;
+            }
+        }
+        .eng-ttl {
+            @include lptp {
+                font-size: 14px;
+            }
+            @include tb {
+                font-size: 13px;
+            }
+        }
+        .swiper-container {
+            @include lptp {
+                margin-top: 61px;
+            }
+            @include tb {
+                margin-top: 40px;
+            }
+            @include sp {
+                margin-top: 24px;
+            }
+            .swiper-wrapper {
+                .swiper-slide {
+                    .work-txt01 {
+                        @include lptp {
+                            margin-top: 40px;
+                        }
+                        @include sp {
+                            width: 100%;
+                        }
+                    }
+                    .work-txt02 {
+                        @include lptp {
+                            margin-top: 40px;
+                        }
+                    }
+                    .work-txt03 {
+                        @include lptp {
+                            margin-top: 40px;
+                        }
+                    }
+                    .work-txt04 {
+                        @include lptp {
+                            margin-top: 40px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.contact {
+    &-in {
+        @include lptp {
+            padding-top: 51px;
+            padding-bottom: 61px;
+            height: auto;
+        }
+        @include tb {
+            padding-top: 36px;
+            padding-bottom: 61px;
+        }
+        .section-ttl {
+            @include lptp {
+                font-size: 26px;
+            }
+            @include tb {
+                font-size: 22px;
+                text-align: center;
+            }
+        }
+        .eng-ttl {
+            @include lptp {
+                font-size: 14px;
+            }
+            @include tb {
+                font-size: 13px;
+            }
+        }
+        .sub-ttl {
+            @include lptp {
+                font-size: 14px;
+            }
+            @include tb {
+                font-size: 13px;
+                margin-top: 30px;
+            }
+        }
+        .contact-form {
+            @include lptp {
+                width: 80%;
+                height: auto;
+            }
+            @include tb {
+                margin-top: 30px;
+                width: 90%;
+            }
+            @include sp {
+                padding: 20px;
+            }
+            .your-name {
+                @include lptp {
+                    margin-top: 26px;
+                    width: 80%;
+                }
+                @include tb {
+                    margin-top: 18px;
+                }
+                @include sp {
+                    width: 100%;
+                }
+            }
+            .your-email {
+                @include lptp {
+                    margin-top: 26px;
+                    width: 80%;
+                }
+                @include tb {
+                    margin-top: 18px;
+                }
+                @include sp {
+                    width: 100%;
+                }
+            }
+            .contents-item {
+                @include lptp {
+                    margin-top: 26px;
+                    width: 100%;
+                }
+                @include tb {
+                    margin-top: 18px;
+                }
+            }
+        }
+    }
+}
+footer {
+    .footer-in {
+        @include lptp {
+            padding-top: 30px;
+            padding-bottom: 30px;
+            height: auto;
+        }
+        @include tb {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        @include sp {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        .top-page {
+            @include lptp {
+                font-size: 20px;
+            }
+            @include sp {
+                font-size: 16px;
+            }
+        }
+        .instructions {
+            @include tb {
+                margin-top: 14px;
+            }
+            @include sp {
+                margin-top: 8px;
+            }
+            &-item01,&-item02 {
+                @include lptp {
+                    font-size: 14px;
+                }
+                @include sp {
+                    font-size: 12px;
+                }
+            }
+        }
+        .all-right {
+            @include lptp {
+                font-size: 13px;
+                margin-top: 30px;
+            }
+            @include tb {
+                margin-top: 20px;
+            }
+            @include sp {
+                margin-top: 8px;
+            }
+        }
+    }
+}
