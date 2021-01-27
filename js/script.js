@@ -60,19 +60,13 @@ $(function () {
       $submitBtn.prop('disabled', true);
     }
   });
+});
 
   ////////////////////////🍔//////////////////////////
-  $(".hamburger").click(function() {
-    if($(".hamburger-menu").hasClass("open")) {
-      $(".hamburger-menu").removeClass("open");
-      $(".hamburger-menu").slideUp(200);
-    } else {
-      $(".hamburger-menu").addClass("open");
-      $(".hamburger-menu").slideDown(200);
-    }
-  });
-///////////🍔以外をクリックしても閉じる//////////////
-  $(document).click(function() {　$('.hamburger-menu').slideUp();　});
-  ///////////🍔クリックで一旦イベント停止/////////////
-  $('.hamburger').click(function() {　event.stopPropagation();　});
+const jsHamburger = document.getElementById('hamburger');
+const hamburgerMenu = document.getElementById('hamburger-menu');
+
+jsHamburger.addEventListener('click', () => {
+  jsHamburger.classList.toggle('is-active');
+  hamburgerMenu.classList.toggle('is-active');
 });
