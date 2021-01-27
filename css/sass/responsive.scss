@@ -727,14 +727,17 @@ header {
             }
             &-item01 {
                 .question {
-                    @include sp {
-                        font-size: 13px;
+                    @include tb {
+                        font-size: 12px;
                     }
                 }
                 .answer {
                     @include lptp {
                         height: auto;
                         padding-bottom: 10px;
+                    }
+                    @include tb {
+                        font-size: 12px;
                     }
                     @include sp {
                         padding-left: 10px;
@@ -744,6 +747,9 @@ header {
             }
             &-item02 {
                 .question {
+                    @include tb {
+                        font-size: 12px;
+                    }
                     @include sp {
                         font-size: 13px;
                         line-height: 1.8;
@@ -760,6 +766,9 @@ header {
                         height: auto;
                         padding-bottom: 10px;
                     }
+                    @include tb {
+                        font-size: 12px;
+                    }
                     @include sp {
                         padding-left: 10px;
                         padding-right: 10px;
@@ -767,10 +776,18 @@ header {
                 }
             }
             &-item03 {
+                .question {
+                    @include tb {
+                        font-size: 12px;
+                    }
+                }
                 .answer {
                     @include lptp {
                         height: auto;
                         padding-bottom: 10px;
+                    }
+                    @include tb {
+                        font-size: 12px;
                     }
                     @include sp {
                         padding-left: 10px;

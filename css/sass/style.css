@@ -88,8 +88,8 @@ header .header-in .header-nav-item01, header .header-in .header-nav-item02, head
 }
 
 header .header-in .header-nav-item01:hover, header .header-in .header-nav-item02:hover, header .header-in .header-nav-item03:hover {
-  -webkit-transform: translateY(-2px);
-          transform: translateY(-2px);
+  -webkit-transform: translateY(-1px);
+          transform: translateY(-1px);
 }
 
 header .header-in .header-nav-item02, header .header-in .header-nav-item03 {
@@ -98,23 +98,47 @@ header .header-in .header-nav-item02, header .header-in .header-nav-item03 {
 
 header .header-in .hamburger {
   display: none;
-  position: absolute;
-  right: 26vw;
-  font-size: 26px;
+  position: relative;
+  width: 40px;
+  height: 40px;
   cursor: pointer;
-  padding: 6px;
-  border-radius: 10px;
-  -webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.12), 0 2px 3px 0 rgba(0, 0, 0, 0.22);
-          box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.12), 0 2px 3px 0 rgba(0, 0, 0, 0.22);
-  -webkit-transition: .3s;
-  transition: .3s;
 }
 
-header .header-in .hamburger:hover {
-  -webkit-box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.15), 0 0 5px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.15), 0 0 5px rgba(0, 0, 0, 0.1);
-  -webkit-transform: translateY(-4px);
-          transform: translateY(-4px);
+header .header-in .hamburger div {
+  width: 60%;
+  height: 2px;
+  background-color: #333;
+  -webkit-transition: .3s;
+  transition: .3s;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+header .header-in .hamburger div:nth-last-of-type(1) {
+  -webkit-transform: translate(-50%, -10px);
+          transform: translate(-50%, -10px);
+}
+
+header .header-in .hamburger div:nth-last-of-type(3) {
+  -webkit-transform: translate(-50%, 8px);
+          transform: translate(-50%, 8px);
+}
+
+header .header-in .hamburger.is-active div:nth-of-type(1) {
+  -webkit-transform: translate(-50%, 0) rotate(-45deg);
+          transform: translate(-50%, 0) rotate(-45deg);
+}
+
+header .header-in .hamburger.is-active div:nth-of-type(2) {
+  opacity: 0;
+}
+
+header .header-in .hamburger.is-active div:nth-of-type(3) {
+  -webkit-transform: translate(-50%, 0) rotate(45deg);
+          transform: translate(-50%, 0) rotate(45deg);
 }
 
 header .header-in .contact-nav {
@@ -147,7 +171,10 @@ header .header-in .contact-nav-link:hover {
 }
 
 header .hamburger-menu {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: .3s;
+  transition: .3s;
 }
 
 header .hamburger-menu .hamburger-wrapper {
@@ -184,8 +211,9 @@ header .hamburger-menu .hamburger-wrapper-item02 {
   margin: 0 60px;
 }
 
-header .hamburger-menu .open {
-  display: block;
+header .hamburger-menu.is-active {
+  visibility: visible;
+  opacity: 1;
 }
 
 .mv {
@@ -723,8 +751,8 @@ header .hamburger-menu .open {
 .blog-in .blog-contents-item01:hover {
   -webkit-box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.15), 0 0 5px rgba(0, 0, 0, 0.1);
           box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.15), 0 0 5px rgba(0, 0, 0, 0.1);
-  -webkit-transform: translateY(-4px);
-          transform: translateY(-4px);
+  -webkit-transform: translateY(-1px);
+          transform: translateY(-1px);
 }
 
 .blog-in .blog-contents-item01 .blog-image {
@@ -768,8 +796,8 @@ header .hamburger-menu .open {
 .blog-in .blog-contents-item02:hover {
   -webkit-box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.15), 0 0 5px rgba(0, 0, 0, 0.1);
           box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.15), 0 0 5px rgba(0, 0, 0, 0.1);
-  -webkit-transform: translateY(-4px);
-          transform: translateY(-4px);
+  -webkit-transform: translateY(-1px);
+          transform: translateY(-1px);
 }
 
 .blog-in .blog-contents-item02 .blog-image {
@@ -812,8 +840,8 @@ header .hamburger-menu .open {
 .blog-in .blog-contents-item03:hover {
   -webkit-box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.15), 0 0 5px rgba(0, 0, 0, 0.1);
           box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.15), 0 0 5px rgba(0, 0, 0, 0.1);
-  -webkit-transform: translateY(-4px);
-          transform: translateY(-4px);
+  -webkit-transform: translateY(-1px);
+          transform: translateY(-1px);
 }
 
 .blog-in .blog-contents-item03 .blog-image {

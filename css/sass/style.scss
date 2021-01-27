@@ -181,7 +181,7 @@ a {
     transition: .3s;
     &:hover {
         box-shadow: 0 15px 30px -5px rgba(0,0,0,.15), 0 0 5px rgba(0,0,0,.1);
-        transform: translateY(-4px);
+        transform: translateY(-1px);
     }
 }
 
@@ -233,7 +233,7 @@ header {
                 transition: .3s;
                 cursor: pointer;
                 &:hover {
-                    transform: translateY(-2px);
+                    transform: translateY(-1px);
                 }
             }
             &-item02,&-item03 {
@@ -242,13 +242,39 @@ header {
         }
         .hamburger {
             display: none;
-            position: absolute;
-            right: 26vw;
-            font-size: 26px;
+            position: relative;
+            width: 40px;
+            height: 40px;
             cursor: pointer;
-            padding: 6px;
-            border-radius: 10px;
-            @include hover;
+            div {
+                width: 60%;
+                height: 2px;
+                background-color: #333;
+                transition: .3s;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                &:nth-last-of-type(1) {
+                    transform: translate(-50%, -10px);
+                }
+                &:nth-last-of-type(3) {
+                    transform: translate(-50%, 8px);
+                }
+            }
+            &.is-active {
+                div {
+                    &:nth-of-type(1) {
+                        transform: translate(-50%, 0) rotate(-45deg);
+                    }
+                    &:nth-of-type(2) {
+                        opacity: 0;
+                    }
+                    &:nth-of-type(3) {
+                        transform: translate(-50%, 0) rotate(45deg);
+                    }
+                }
+            }
         }
         .contact-nav {
             margin-left: 184px;
@@ -258,7 +284,9 @@ header {
         }
     }
     .hamburger-menu {
-        display: none;
+        visibility: hidden;
+        opacity: 0;
+        transition: .3s;
         .hamburger-wrapper {
             display: flex;
             justify-content: center;
@@ -280,8 +308,9 @@ header {
                 margin: 0 60px;
             }
         }
-        .open {
-            display: block;
+        &.is-active {
+            visibility: visible;
+            opacity: 1;
         }
     }
 }
